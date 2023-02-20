@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kehrli.Tech</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="toptext text-center">Kehrli.Tech</h1>
+    </div>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Kehrli.Tech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Künstliche Intelligenz
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#KI-Kunst">KI-Kunst</a>
+                        <a class="dropdown-item" href="#Chat-GPT">Chat-GPT</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Pytagoras.html">Pytagoras Rechner</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container">
+        <div class="row">
+            <a class="anchor" id="KI-Kunst"></a>
+            <div class="col">
+                <br>
+                <h1>KI-Kunst:</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3>DALL-E</h3>
+                <p>DALL-E ist ein künstlicher Intelligenz-Modell von OpenAI, das in der Lage ist, 2D-Bilder auf Basis
+                    von Textbeschreibungen zu generieren. Es kann dazu verwendet werden, um eine Vielzahl von
+                    verschiedenen Bildern zu erstellen, von Landschaften bis hin zu Futuristischen Maschinen und
+                    fantastischen Kreaturen. DALL-E nutzt eine fortschrittliche Technologie namens Generative Pretrained
+                    Transformer 3 (GPT-3), um die Texteingaben zu verstehen und Bilder entsprechend zu generieren. Diese
+                    Technologie ermöglicht es DALL-E, ein breites Spektrum an kreativen Möglichkeiten zu bieten und
+                    lässt es zu einem wertvollen Werkzeug für Designer, Künstler und andere kreative Profis werden.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <div id="im1" class="carousel-item active">
+                            <img src="imgs/ai1.png" alt="Image 1">
+                        </div>
+                        <div id="im2" class="carousel-item">
+                            <img src="imgs/ai2.png" alt="Image 2">
+                        </div>
+                        <div id="im3" class="carousel-item">
+                            <img src="imgs/ai3.png" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm text-center">
+                <h2 class="anz1" id="artNr1">Fuchs</h2>
+                <h4 class="anz2">Prompt:</h4>
+                <h3 class="anz3" id="artNr3">Cute robotic fox flying in Space playing with an Key painted in Oil
+                    expressive</h3>
+                <h3>Prompt:</h3>
+                Im Zusammenhang mit einer Bildgenerator-KI kann ein Prompt eine spezifische Anweisung oder Aufforderung
+                an das System sein, ein neues Bild zu generieren, das bestimmte Eigenschaften oder Merkmale aufweist.
+                Der Prompt kann beispielsweise eine Beschreibung des gewünschten Bildes, eine Vorlage oder eine Sammlung
+                von Beispielbildern enthalten. Das KI-System verwendet dann diese Informationen, um ein neues,
+                generiertes Bild zu erstellen, das den Anforderungen des Prompts entspricht.
+            </div>
+
+        </div>
+
+        <div class="row">
+            <a class="anchor" id="Chat-GPT"></a>
+            <div class="col">
+                <br>
+                <h1> Chat.GPT erstellte Texte:</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Zukunft der Technologie:</h3>
+                <p>
+                    Die Zukunft der Technologie ist voller Möglichkeiten und Herausforderungen. Einige der wichtigsten
+                    Entwicklungen, die wir in den kommenden Jahren sehen werden, sind die fortschreitende
+                    Automatisierung
+                    und Künstliche Intelligenz, die Verbreitung von 5G-Netzwerken und das Internet der Dinge, sowie die
+                    zunehmende Verlagerung von Daten und Anwendungen in die Cloud.
+                </p>
+                <p>
+                    Eines der wichtigsten Themen in Bezug auf die Automatisierung und KI ist die Auswirkung auf die
+                    Arbeitsplätze. Es wird erwartet, dass viele Arbeitsplätze durch Automatisierung ersetzt werden,
+                    während
+                    andere neue Arbeitsplätze schaffen werden. Es ist wichtig, dass wir uns auf die Schaffung von
+                    Arbeitsplätzen für die Zukunft vorbereiten und uns auf die Ausbildung und Weiterbildung von
+                    Fachkräften
+                    für diese neuen Technologien konzentrieren.
+                </p>
+                <p>
+                    5G-Netzwerke werden die Verbindung von Geräten und die Übertragung von Daten beschleunigen und
+                    verbessern und damit die Entwicklung von innovativen Anwendungen und Diensten ermöglichen. Dazu
+                    gehören
+                    autonomes Fahren, Echtzeit-Virtual- und Augmented-Reality-Anwendungen und die Automatisierung von
+                    Fabriken und Lagerhäusern.
+                </p>
+                <p>
+                    Das Internet der Dinge ermöglicht es, Dinge und Geräte mit dem Internet zu verbinden und damit die
+                    Sammlung und Analyse von Daten zu erleichtern. Dies wiederum wird die Entwicklung von neuen
+                    Anwendungen
+                    und Diensten ermöglichen, die das Leben der Menschen verbessern, wie z.B. vernetzte
+                    Gesundheitstechnologien, intelligente Energiemanagement-Systeme und die Automatisierung von
+                    Gebäuden.
+                </p>
+                <p>
+                    All diese Entwicklungen werden dazu beitragen, das Leben der Menschen zu verbessern und neue
+                    Möglichkeiten zu schaffen, aber sie stellen auch neue Herausforderungen dar, insbesondere in Bezug
+                    auf
+                    Datensicherheit und Privatsphäre. Es ist wichtig, dass wir uns diesen Herausforderungen stellen und
+                    sicherstellen, dass die Technologie für alle zugänglich und nutzbar ist.
+                </p>
+            </div>
+
+            <div class="col">
+                <h3>Erneuerbare Energie:</h3>
+                <p>Erneuerbare Energien sind die Zukunft der Energieversorgung. Sie sind sauber, unerschöpflich und
+                    tragen dazu bei, die Klimakrise zu bekämpfen. Solarenergie, Windenergie, Wasser- und Biomasseenergie
+                    sind die wichtigsten erneuerbaren Energien. Sie sind eine wichtige Alternative zu fossilen
+                    Brennstoffen wie Kohle, Öl und Gas, die zur Erderwärmung und zur Verschmutzung der Luft und des
+                    Wassers beitragen.</p>
+                <p>Die Solarenergie ist eine der am schnellsten wachsenden erneuerbaren Energien und wird vor allem
+                    durch Photovoltaikanlagen erzeugt. Windenergie wird durch Windturbinen erzeugt und ist vor allem in
+                    Küstengebieten und auf offenen Flächen einsetzbar. Wasser- und Biomasseenergie werden durch die
+                    Nutzung von Wasserkraftwerken und Biomasse-Kraftwerken erzeugt.</p>
+                <p>Eine wichtige Tatsache ist, dass die Erneuerbare Energien nicht nur zur Reduzierung von
+                    Treibhausgasemissionen beitragen, sondern auch zur Schaffung von Arbeitsplätzen, zur Verbesserung
+                    der Energieversorgungssicherheit und zur Unabhängigkeit von fossilen Brennstoffimporten beitragen.
+                </p>
+                <p>Die Erneuerbare Energien sind in vielen Ländern bereits ein wichtiger Bestandteil der
+                    Energieversorgung, aber es gibt immer noch viel Raum für Wachstum und Entwicklung. Investitionen in
+                    erneuerbare Energien sind wichtig, um die Kosten zu senken und die Technologie weiter zu verbessern.
+                    Es ist wichtig, dass Regierungen, Unternehmen und Verbraucher gemeinsam dafür sorgen, dass
+                    erneuerbare Energien eine immer größere Rolle in der Energieversorgung spielen.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
