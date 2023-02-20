@@ -1,27 +1,29 @@
 
 
+
+
 var cnt = 0;
 setInterval(
     function () {
         if (document.getElementById("im1").className == 'carousel-item active' && cnt != 1) {
-            document.getElementById("artNr1").style.color = "black";
-            document.getElementById("artNr3").style.color = "black";
+            document.getElementById("artNr1").style.color = "#C74531";
+            document.getElementById("artNr3").style.color = "#C74531";
             setTimeout(fuchs, 250)
             setTimeout(resetCol, 500);
             cnt = 1;
 
         }
         else if (document.getElementById("im2").className == "carousel-item active" && cnt != 2) {
-            document.getElementById("artNr1").style.color = "black";
-            document.getElementById("artNr3").style.color = "black";
+            document.getElementById("artNr1").style.color = "#C74531";
+            document.getElementById("artNr3").style.color = "#C74531";
             setTimeout(elefant, 250)
             setTimeout(resetCol, 500);
 
             cnt = 2;
         }
         else if (document.getElementById("im3").className == "carousel-item active" && cnt != 3) {
-            document.getElementById("artNr1").style.color = "black";
-            document.getElementById("artNr3").style.color = "black";
+            document.getElementById("artNr1").style.color = "#C74531";
+            document.getElementById("artNr3").style.color = "#C74531";
             setTimeout(eule, 250)
             setTimeout(resetCol, 500);
 

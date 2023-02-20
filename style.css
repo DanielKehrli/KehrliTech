@@ -1,6 +1,17 @@
+@font-face {
+    font-family: "leseFont";
+    src: url(Fonts/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
+  }
+
+  body{
+    background-color: #202124 !important;
+    color: #E8EaEd !important;
+} 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 .toptext {
     background-image: url(imgs/top.jpg);
@@ -8,11 +19,20 @@ html {
     color: white;
     padding-top: 10%;
     padding-bottom: 10%;
+    font-family: monospace;
 
+}
+
+.leseText{
+    font-family:leseFont;
 }
 
 .navbar {
     margin-bottom: 10px;
+}
+
+.nav-bg{
+    background-color: #C74531;
 }
 
 .carousel-inner img {
@@ -21,11 +41,11 @@ html {
 }
 
 .carousel-item h3 {
-    background-color: black;
+    background-color: #C74531;
 }
 
 .carousel-item p {
-    background-color: black;
+    background-color: #C74531;
 }
 
 .anchor {
@@ -36,7 +56,7 @@ html {
 }
 
 .anz1 {
-    background-color: black;
+    background-color: #C74531;
     color: white;
     margin-top: 10%;
     padding: 1vw;
@@ -47,7 +67,7 @@ html {
 }
 
 .anz2 {
-    background-color: black;
+    background-color: #60AB9A;
     color: white;
     margin-top: 3%;
     padding: 1vw;
@@ -58,7 +78,7 @@ html {
 }
 
 .anz3 {
-    background-color: black;
+    background-color: #C74531;
     color: white;
     padding: 1vw;
     display: block;
