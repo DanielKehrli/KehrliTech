@@ -28,7 +28,7 @@
     <div class="container-fluid">
         <h1 class="toptext text-center">Kehrli.Tech</h1>
     </div>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark nav-bg">
         <a class="navbar-brand" href="#">Kehrli.Tech</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,8 +37,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Künstliche Intelligenz</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="index.html" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Künstliche Intelligenz
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html#KI-Kunst">KI-Kunst</a>
+                        <a class="dropdown-item" href="index.html#Chat-GPT">Chat-GPT</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Pytagoras.html">Pytagoras Rechner</a>
@@ -64,7 +71,7 @@
                     <input type="number" id="sideB" name="sideB" required><br><br>
                     <label for="sideC">Side C:</label>
                     <input type="number" id="sideC" name="sideC" required><br><br>
-                    <input type="button" value="Calculate" onclick="calculate()">
+                    <input type="button" class="alert" value="Calculate" onclick="calculate()">
                 </form>
             </div>
         </div>
@@ -72,7 +79,6 @@
             <div class=" col d-flex justify-content-center">
                 <span class="h4" id="result" style="padding-top: 20px;"></span>
             </div>
-            <br><br><br><br><br><br><br>
         </div>
         <script>
             function calculate() {
@@ -107,7 +113,41 @@
                 }
             }
         </script>
+    <div class = "row">
+    <h1>Random Quote Generator</h1>
+</div>
+<div class = "row">
+    <div id="quote">Click the button to generate a random quote</div>
+</div>
+<div class="row justify-content-center"><button class="alert" id="generateBtn">Generate</button></div>
     </div>
+    
+    <br><br><br><br><br><br><br>
+    <script>
+        // Array of quotes
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Innovation distinguishes between a leader and a follower. - Steve Jobs",
+            "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+            "Strive not to be a success, but rather to be of value. - Albert Einstein",
+            "Imagination is more important than knowledge. - Albert Einstein",
+            "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+            "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "It does not matter how slowly you go, as long as you do not stop. - Confucius",
+            "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt"
+        ];
+
+        // Function to generate a random quote
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById('quote').textContent = quote;
+        }
+
+        // Add click event listener to the generate button
+        document.getElementById('generateBtn').addEventListener('click', generateQuote);
+    </script>
 </body>
 
 </html>
