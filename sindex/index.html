@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+      type="text/javascript"
+      5
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="startbox" id="start" style="top: 30%; left: 15.5%">
+        <div class="square square1" id="1"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 30%; left: 27.5%">
+        <div class="square square2" id="2"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 30%; left: 39.5%">
+        <div class="square square3" id="3"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 30%; left: 51.5%">
+        <div class="square square4" id="4"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 30%; left: 63.5%">
+        <div class="square square5" id="5"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 30%; left: 75.5%">
+        <div class="square square6" id="6"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 15.5%">
+        <div class="square square7" id="7"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 27.5%">
+        <div class="square square8" id="8"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 39.5%">
+        <div class="square square9" id="9"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 51.5%">
+        <div class="square square10" id="10"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 63.5%">
+        <div class="square square11" id="11"></div>
+      </div>
+      <div class="startbox" id="start" style="top: 42.5%; left: 75.5%">
+        <div class="square square12" id="12"></div>
+      </div>
+    </div>
+    <div class="wholeTrain">
+      <div class="drop-area drop2" id="d3"></div>
+      <div class="drop-area drop3" id="d2"></div>
+      <div class="drop-area drop4" id="d1"></div>
+      <div class="train" id="lock"></div>
+    </div>
+    <div class="buttons">
+      <button class="reset" id="reset" onclick="location.reload()">
+        Reset
+      </button>
+      <button class="start" id="start" onclick="start()">Start</button>
+      <span></span>
+      <button class="stop" id="reset" onclick="sendMsg('Stop:1')">Stop</button>
+    </div>
+
+    <span id="online" class="online">Offline</span>
+    <script>
+      var counter = 1;
+      let selectionActive = 0;
+
+      var mqtt_server = "192.168.1.30";
+      var mqtt_port = "9001";
+      /*var mqtt_server = "127.0.0.1";
+      var mqtt_port = "8080";*/
+      var mqtt_destname = "Drop";
+
+      function onMessageArrived() {
+        location.reload();
+      }
+
+      var squares = document.querySelectorAll(".square");
+      squares.forEach((square) => {
+        square.addEventListener("click", clickSquare);
+        square.addEventListener("touchstart", clickSquare);
+      });
+
+      function clickSquare(event) {
+        if (counter <= 3) {
+          selectionActive = 1;
+          square = document.getElementById(event.target.id);
+          square.removeEventListener("click", clickSquare);
+          document.getElementById("d" + counter).appendChild(square);
+          sendMsg("container:" + square.id + ";train:" + counter);
+          counter++;
+          document.getElementById("instructions").style.color = "#ececf1";
+          document.getElementById("instructions").innerHTML =
+            "Klicke auf die gewünschten Container und starte die Fahrt.";
+        } else {
+          document.getElementById("instructions").style.color = "red";
+          document.getElementById("instructions").innerHTML =
+            "Der Zug ist Voll. Bitte Strat drücken.";
+        }
+      }
+
+      function start(code) {
+        if (counter != 1) {
+          sendMsg("Start:1");
+          document.getElementById("d3").style.transform = "translateX(2500px)";
+          document.getElementById("d2").style.transform = "translateX(2500px)";
+          document.getElementById("d1").style.transform = "translateX(2500px)";
+          document.getElementById("lock").style.transform =
+            "translateX(2500px)";
+          setTimeout(resetTrain, 1500);
+        } else {
+          document.getElementById("instructions").style.color = "red";
+          document.getElementById("instructions").innerHTML =
+            "Minimum ein Container wählen";
+        }
+      }
+
+      function resetTrain() {
+        document.getElementById("d3").style.transition = "0ms";
+        document.getElementById("d1").style.transition = "0ms";
+        document.getElementById("d2").style.transition = "0ms";
+        document.getElementById("lock").style.transition = "0ms";
+
+        document.getElementById("d3").style.transform = "translateX(-1500px)";
+        document.getElementById("d2").style.transform = "translateX(-1500px)";
+        document.getElementById("d1").style.transform = "translateX(-1500px)";
+        document.getElementById("lock").style.transform = "translateX(-1500px)";
+
+        setTimeout(resetTrain2, 100);
+      }
+      function resetTrain2() {
+        document.getElementById("d3").style.transition = "3000ms";
+        document.getElementById("d1").style.transition = "3000ms";
+        document.getElementById("d2").style.transition = "3000ms";
+        document.getElementById("lock").style.transition = "3000ms";
+
+        document.getElementById("d3").style.transform = "translateX(0px)";
+        document.getElementById("d2").style.transform = "translateX(0px)";
+        document.getElementById("d1").style.transform = "translateX(0px)";
+        document.getElementById("lock").style.transform = "translateX(0px)";
+      }
+
+      window.onload = function () {
+        setTimeout(randomSelection, 1000);
+        conectMQTT();
+      };
+
+      function conectMQTT() {
+        client = new Paho.MQTT.Client(mqtt_server, Number(mqtt_port), "");
+        var options = {
+          useSSL: false,
+          onSuccess: onConnect,
+        };
+        client.connect(options);
+
+        client.onMessageArrived = onMessageArrived;
+      }
+      function onConnect() {
+        document.getElementById("online").innerHTML = "Online";
+        document.getElementById("online").style.backgroundColor = "Green";
+        sendMsg(
+          "container:0;train:1!container:0;train:2!container:0;train:3!container:0;train:4;"
+        );
+
+        client.subscribe("reset");
+      }
+
+      function sendMsg(msg) {
+        var mqtt_msg = msg;
+        message = new Paho.MQTT.Message(mqtt_msg);
+        message.destinationName = mqtt_destname;
+        client.send(message);
+      }
+      function randomSelection() {
+        let rand;
+        if (selectionActive == 0) {
+          for (let i = 1; i < 4; i++) {
+            rand = Math.floor(Math.random() * 12) + 1;
+            document.getElementById(rand).click();
+          }
+
+          setTimeout(start, 1000);
+        }
+      }
+    </script>
+  </body>
+</html>

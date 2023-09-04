@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+      type="text/javascript"
+      5
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleuebersicht.css" />
+  </head>
+  <body>
+    <a
+      href="Statistik.html"
+      style="
+        position: fixed;
+        height: 130px;
+        width: 400px;
+        top: 450px;
+        left: 1570px;
+      "
+    ></a>
+    <div id="RoboSpeed" class="RoboSpeed">
+      <div id="robo1" class="robo" style="left: 778px"></div>
+    </div>
+    <div id="RoboSpeed" class="RoboSpeed">
+      <div id="robo2" class="robo" style="left: 873px"></div>
+    </div>
+    <div id="RoboSpeed" class="RoboSpeed">
+      <div id="robo3" class="robo" style="left: 968px"></div>
+    </div>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 679px; left: 1048px"
+    >
+      <path
+        id="Curve1"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(249, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 682px; left: 1178px"
+    >
+      <path
+        id="Curve2"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(157.5, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 229px; left: 1118px"
+    >
+      <path
+        id="Curve3"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(22.5, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 318px; left: 1025px"
+    >
+      <path
+        id="Curve4"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(-69,100, 100)"
+      />
+    </svg>
+
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 257px; left: 522px"
+    >
+      <path
+        id="Curve5"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(69, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 254px; left: 391px"
+    >
+      <path
+        id="Curve6"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(-22.5, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 707px; left: 451px"
+    >
+      <path
+        id="Curve7"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(-157.5, 100, 100)"
+      />
+    </svg>
+    <svg
+      class="curve"
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      style="top: 618px; left: 545px"
+    >
+      <path
+        id="Curve8"
+        d="M100,100 A100,100 0 0,1 165,100"
+        fill="none"
+        stroke="red"
+        stroke-width="18"
+        transform="rotate(-249, 100, 100)"
+      />
+    </svg>
+
+    <div
+      class="mesurement"
+      id="Mes1"
+      style="height: 48px; width: 110px; top: 860px; left: 484px"
+    >
+      0x00
+    </div>
+    <div
+      class="mesurement"
+      id="Mes2"
+      style="height: 48px; width: 110px; top: 600px; left: 1173px"
+    >
+      0x00
+    </div>
+    <div
+      class="mesurement"
+      id="Mes3"
+      style="height: 48px; width: 110px; top: 243px; left: 1195px"
+    >
+      0x00
+    </div>
+
+    <div class="Sens" id="Rail1" style="top: 579px; left: 951px"></div>
+    <div class="Sens" id="Rail2" style="top: 643px; left: 1019px"></div>
+    <div class="Sens" id="Rail3" style="top: 703px; left: 1329px"></div>
+    <div class="Sens" id="Rail4" style="top: 409px; left: 1329px"></div>
+    <div class="Sens" id="Rail5" style="top: 469px; left: 1021px"></div>
+    <div class="Sens" id="Rail6" style="top: 469px; left: 728px"></div>
+    <div class="Sens" id="Rail7" style="top: 409px; left: 417px"></div>
+    <div class="Sens" id="Rail8" style="top: 556px; left: 417px"></div>
+    <div class="Sens" id="Rail9" style="top: 700px; left: 417px"></div>
+    <div class="Sens" id="Rail10" style="top: 643px; left: 728px"></div>
+
+    <div class="Sens" id="Dep1" style="top: 859px; left: 816px"></div>
+    <div class="Sens" id="Dep2" style="top: 818px; left: 777px"></div>
+    <div class="Sens" id="Dep3" style="top: 762px; left: 760px"></div>
+    <div class="Sens" id="Dep4" style="top: 707px; left: 777px"></div>
+    <div class="Sens" id="Dep5" style="top: 667px; left: 816px"></div>
+    <div class="Sens" id="Dep6" style="top: 652px; left: 870px"></div>
+    <div class="Sens" id="Dep7" style="top: 667px; left: 927px"></div>
+    <div class="Sens" id="Dep8" style="top: 707px; left: 967px"></div>
+    <div class="Sens" id="Dep9" style="top: 762px; left: 978px"></div>
+    <div class="Sens" id="Dep10" style="top: 818px; left: 967px"></div>
+    <div class="Sens" id="Dep11" style="top: 859px; left: 927px"></div>
+    <div class="Sens" id="Dep12" style="top: 873px; left: 873px"></div>
+    <span id="online" class="online">Offline</span>
+    <script>
+      let roboSize;
+
+      var mqtt_server = "192.168.1.30";
+      var mqtt_port = "9001";
+      /*var mqtt_server = "127.0.0.1";
+      var mqtt_port = "8080";*/
+      var mqtt_destname = "uebersicht";
+
+      function onMessageArrived(message) {
+        console.log(message.destinationName);
+        if (message.destinationName.includes("Mes1")) {
+          document.getElementById(message.destinationName).innerText =
+            message.payloadString + "mm";
+        } else if (message.destinationName.includes("Mes2")) {
+          document.getElementById(message.destinationName).innerText =
+            message.payloadString / 10 + "mm";
+        } else if (message.destinationName.includes("Curve")) {
+          if (message.payloadString == "true") {
+            document.getElementById(message.destinationName).style.stroke =
+              "green";
+          } else if (message.payloadString == "false") {
+            document.getElementById(message.destinationName).style.stroke =
+              "red";
+          }
+        } else if (message.payloadString == "true") {
+          document.getElementById(
+            message.destinationName
+          ).style.backgroundColor = "green";
+        } else if (message.payloadString == "false") {
+          document.getElementById(
+            message.destinationName
+          ).style.backgroundColor = "red";
+        } else if (message.destinationName.includes("Mes3")) {
+          document.getElementById(message.destinationName).innerText =
+            parseFloat(message.payloadString).toFixed(2) + "°C";
+        } else if (message.destinationName == "RoboX") {
+          document.getElementById("robo1").style.height =
+            parseInt(message.payloadString * 10) + "px";
+        } else if (message.destinationName == "RoboY") {
+          document.getElementById("robo2").style.height =
+            parseInt(message.payloadString * 10) + "px";
+        } else if (message.destinationName == "RoboZ") {
+          document.getElementById("robo3").style.height =
+            parseInt(message.payloadString * 10) + "px";
+        }
+      }
+
+      window.onload = function () {
+        conectMQTT();
+      };
+
+      function conectMQTT() {
+        client = new Paho.MQTT.Client(mqtt_server, Number(mqtt_port), "");
+        var options = {
+          useSSL: false,
+          onSuccess: onConnect,
+        };
+        client.connect(options);
+
+        client.onMessageArrived = onMessageArrived;
+      }
+      function onConnect() {
+        document.getElementById("online").innerHTML = "Online";
+        document.getElementById("online").style.backgroundColor = "Green";
+
+        for (let i = 1; i < 13; i++) {
+          var counterTopic = "Rail" + i;
+          var counterTopic2 = "Dep" + i;
+          var counterTopic3 = "Curve" + i;
+          var counterTopic4 = "Mes" + i;
+          client.subscribe(counterTopic);
+          client.subscribe(counterTopic2);
+          client.subscribe(counterTopic3);
+          client.subscribe(counterTopic4);
+        }
+        client.subscribe("RoboX");
+        client.subscribe("RoboY");
+        client.subscribe("RoboZ");
+      }
+
+      function sendMsg(msg) {
+        var mqtt_msg = msg;
+        message = new Paho.MQTT.Message(mqtt_msg);
+        message.destinationName = mqtt_destname;
+        client.send(message);
+      }
+    </script>
+  </body>
+</html>

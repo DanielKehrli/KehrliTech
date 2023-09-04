@@ -1,0 +1,19 @@
+body {
+    background-image: url(imgs/bgstatistik.webp);
+    background-size: cover;
+  }
+
+.Color{
+  position:fixed;
+  height: 180px;
+  width: 180px;
+  background-color:rgb(146, 71, 71);
+  border-radius: 20px;
+}
+
+.containerStats{
+  width: 7em;
+  height: 4em;
+  border-radius: 10px;
+  position: fixed;
+}

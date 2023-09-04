@@ -1,0 +1,130 @@
+
+
+@font-face {
+  font-family: 'Bahn';
+  src: url('Bahnschrift/BAHNSCHRIFT.TTF');
+  font-stretch: condensed;
+
+}
+
+
+
+
+h1 {
+    color: #ececf1;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 300%;
+  }
+  
+  body {
+    background-image: url(imgs/bg_uebersicht.webp);
+    background-size: cover;
+  }
+  
+  .buttons {
+    top: 84.2%;
+    left: 37%;
+    position:fixed;
+  }
+  
+  button {
+    border: none;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+  }
+  
+  .reset {
+    color: #ececf1;
+    background-color: #4f4caf;
+    border-radius: 5px;
+    border: #ececf1 2px solid;
+  }
+  
+  .start {
+    color: #ececf1;
+    background-color: #4caf50;
+    border-radius: 5px;
+    border: #ececf1 2px solid;
+  }
+  
+  .stop {
+    color: #ececf1;
+    background-color: #af4c4c;
+    border-radius: 5px;
+    border: #ececf1 2px solid;
+  }
+  
+  .start:active {
+    color: #444654;
+    background-color: #4caf4f80;
+    border: #444654 2px solid;
+  }
+  .stop:active {
+    color: #444654;
+    background-color: #bd565680;
+    border: #444654 2px solid;
+  }
+  .reset:active {
+    color: #444654;
+    background-color: #776bca80;
+    border: #444654 2px solid;
+  }
+  
+  @keyframes append-animate {
+      from {
+          transform: scale(0);
+          opacity: 0;
+      }
+      to {
+          transform: scale(1);
+          opacity: 1;	
+      }
+  }
+  
+  .online {
+    background-color: red;
+    color: #ececf1;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Trebuchet MS", sans-serif;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .curve{
+    position: fixed;
+  }
+
+  .Sens{
+    border: 3px solid#615050;
+    position: fixed;
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    background-color: red;
+  }
+
+  .mesurement{
+    color: rgb(72, 55, 55);
+    font-family: Bahn;
+    position: fixed;
+    text-align: center;
+    margin-top: 6px;
+    font-size: 30px;
+  }
+
+  .robo{
+    
+    background-color:  #615050;
+    position: fixed;
+    bottom: 630px;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+  }
+  

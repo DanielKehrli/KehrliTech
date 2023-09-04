@@ -1,0 +1,250 @@
+
+h1 {
+  color: #ececf1;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 300%;
+}
+
+body {
+  background-color: #444654;
+  border: 2px solid #ececf1;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+}
+
+button {
+  border: none;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.reset {
+  color: #ececf1;
+  background-color: #4f4caf;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.start {
+  color: #ececf1;
+  background-color: #4caf50;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.stop {
+  color: #ececf1;
+  background-color: #af4c4c;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.start:active {
+  color: #444654;
+  background-color: #4caf4f80;
+  border: #444654 2px solid;
+}
+.stop:active {
+  color: #444654;
+  background-color: #bd565680;
+  border: #444654 2px solid;
+}
+.reset:active {
+  color: #444654;
+  background-color: #776bca80;
+  border: #444654 2px solid;
+}
+
+.square {
+  width: 110px;
+  height: 50px;
+  margin: 5px;
+  border: 2px solid #ececf1;
+  display: inline-block;
+  cursor:pointer;
+}
+
+.square1 {
+  background-image: url(imgs/PF_Logo_RGB.SVG);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ff0000;
+}
+
+.square2 {
+  background-image: url(imgs/B_R_N_R_S.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #00ff00;
+  /* Green */
+}
+
+.square3 {
+  background-image: url(imgs/e.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #0000ff;
+  /* Blue */
+}
+
+.square4 {
+  background-image: url(imgs/IN_logo_bk_nb_tr_cmyk_2line.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ffa500;
+  /* Orange */
+}
+
+.square5 {
+  background-image: url(imgs/L_Pilz_with_Claim_Path_K60_2014_08.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #3b5165;
+  /* Purple */
+}
+
+.square6 {
+  background-image: url(imgs/leuze_logo_red_rgb.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #1c0080;
+  /* Purple */
+}
+
+.square7 {
+  background-image: url(imgs/logo.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #006280;
+  /* Purple */
+}
+
+.square8 {
+  background-image: url(imgs/OMRON_Logo.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #800000;
+  /* Purple */
+}
+
+.square9 {
+  background-image: url(imgs/logo.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #7543aa;
+  /* Purple */
+}
+
+.square10 {
+  background-image: url(imgs/PF_Logo_RGB.SVG);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #800080;
+  /* Purple */
+}
+
+.square11 {
+  background-image: url(imgs/PF_Logo_RGB.SVG);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #040080;
+  /* Purple */
+}
+
+.square12 {
+  background-image: url(imgs/PF_Logo_RGB.SVG);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #0b8000;
+  /* Purple */
+}
+
+.drop1 {
+  left: 20%;
+}
+
+.drop2 {
+  left: 30%;
+}
+
+.drop3 {
+  left: 40%;
+}
+
+.drop4 {
+  left: 50%;
+}
+
+.startbox {
+  border: 3px dotted #ececf1;
+  width: 122px;
+  height: 62px;
+  position: fixed;
+}
+
+.drop-area {
+  position: fixed;
+  width: 140px;
+  height: 109px;
+  background: url(imgs/2.svg);
+  display: inline-block;
+}
+
+.train {
+  position: fixed;
+  left: 60%;
+  width: 156px;
+  height: 110px;
+  background: url(https://raw.githubusercontent.com/DanielKehrli/KehrliTech/75a817cc18075f4d6d6a415237d127d1c4da7b6e/imgs/2.svg);
+  display: inline-block;
+}
+
+.wholeTrain {
+  margin-top: 18%;
+  padding-bottom: 150px;
+}
+
+.buttons {
+  top: 75%;
+  left: 35%;
+  position: fixed;
+}
+
+.ins {
+  top: 280px;
+  left: 420px;
+  position: fixed;
+  color: #ececf1;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 150%;
+}
+.online {
+  background-color: red;
+  color: #ececf1;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Trebuchet MS", sans-serif;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

@@ -1,0 +1,259 @@
+
+h1 {
+  color: #ececf1;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 300%;
+}
+
+body {
+  background-image: url(imgs/bg.webp);
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.buttons {
+  top: 84.2%;
+  left: 37%;
+  position:fixed;
+}
+
+button {
+  border: none;
+  padding: 30px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.reset {
+  color: #ececf1;
+  background-color: #4f4caf;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.start {
+  color: #ececf1;
+  background-color: #4caf50;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.stop {
+  color: #ececf1;
+  background-color: #af4c4c;
+  border-radius: 5px;
+  border: #ececf1 2px solid;
+}
+
+.start:active {
+  color: #444654;
+  background-color: #4caf4f80;
+  border: #444654 2px solid;
+}
+.stop:active {
+  color: #444654;
+  background-color: #bd565680;
+  border: #444654 2px solid;
+}
+.reset:active {
+  color: #444654;
+  background-color: #776bca80;
+  border: #444654 2px solid;
+}
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+
+.square {
+  width: 163px;
+  height: 75px;
+  margin: 5px;
+  border: 2px solid black;
+  display: inline-block;
+  cursor:pointer;
+  animation: append-animate 0.3s linear;
+  border-radius: 10px;
+}
+
+.square1 {
+  background-image: url("imgs/Balluff.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.square2 {
+  background-image: url("imgs/Baumer.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: black;
+  /* Green */
+}
+
+.square3 {
+  background-image: url("imgs/Euchner.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: red;
+  /* Blue */
+}
+
+.square4 {
+  background-image: url("imgs/HFTM.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: #8f0064;
+  /* Orange */
+}
+
+.square5 {
+  background-image: url("imgs/IFM.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: orange;
+  /* Purple */
+}
+
+.square6 {
+  background-image: url("imgs/Leuze.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: rgb(156, 0, 0);
+  /* Purple */
+}
+
+.square7 {
+  background-image: url("imgs/Omron.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: rgb(106, 106, 106);
+  /* Purple */
+}
+
+.square8 {
+  background-image: url("imgs/panasinic.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: black;
+  /* Purple */
+}
+
+.square9 {
+  background-image: url("imgs/pilz.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: rgb(203, 108, 0);
+  /* Purple */
+}
+
+.square10 {
+  background-image: url("imgs/puf.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: #007343;
+  /* Purple */
+}
+
+.square11 {
+  background-image: url("imgs/sick.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: #118ec8;
+  /* Purple */
+}
+
+.square12 {
+  background-image: url("imgs/ue.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: red;
+  /* Purple */
+}
+
+.drop2 {
+  left: 30%;
+}
+
+.drop3 {
+  left: 41%;
+}
+
+.drop4 {
+  left: 52%;
+}
+
+.startbox {
+
+  width: 122px;
+  height: 62px;
+  position: fixed;
+}
+
+.drop-area {
+  position: fixed;
+  width: 220px;
+  height: 160px;
+  background: url("imgs/2.svg");
+  background-size: 100%;
+  display: inline-block;
+  transition: 3000ms;
+}
+
+.train {
+  position: fixed;
+  left: 62%;
+  width: 220px;
+  height: 161px;
+  background: url(imgs/lock.svg);
+  background-size: cover;
+  display: inline-block;
+  transition: 3000ms;
+}
+
+.wholeTrain {
+  margin-top: 41%;
+  padding-bottom: 150px;
+}
+
+
+.ins {
+  color: #ececf1;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 150%;
+}
+.online {
+  background-color: red;
+  color: #ececf1;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Trebuchet MS", sans-serif;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

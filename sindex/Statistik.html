@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+      type="text/javascript"
+      5
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleuebersicht.css" />
+    <link rel="stylesheet" href="stylestatistik.css" />
+  </head>
+  <body>
+    <a
+      href="uebersicht.html"
+      style="
+        position: fixed;
+        height: 130px;
+        width: 400px;
+        top: 300px;
+        left: 1570px;
+      "
+    ></a>
+    <div id="cont1"></div>
+    <div id="cont2"></div>
+    <div id="cont3"></div>
+    <div id="cont4"></div>
+    <div id="cont5"></div>
+    <div id="cont6"></div>
+    <div id="cont7"></div>
+    <div id="cont8"></div>
+    <div id="cont9"></div>
+    <div id="cont10"></div>
+    <div id="cont11"></div>
+    <div id="cont12"></div>
+
+    <div class="containerStats square1" style="top: 21.3em; left: 14.1em"></div>
+    <div class="containerStats square2" style="top: 21.3em; left: 22.6em"></div>
+    <div class="containerStats square3" style="top: 21.3em; left: 31em"></div>
+    <div class="containerStats square4" style="top: 21.3em; left: 39.5em"></div>
+    <div class="containerStats square5" style="top: 21.3em; left: 47.9em"></div>
+    <div class="containerStats square6" style="top: 21.3em; left: 56.4em"></div>
+
+    <div class="containerStats square7" style="top: 30.7em; left: 14.1em"></div>
+    <div class="containerStats square8" style="top: 30.7em; left: 22.6em"></div>
+    <div class="containerStats square9" style="top: 30.7em; left: 31em"></div>
+    <div
+      class="containerStats square10"
+      style="top: 30.7em; left: 39.5em"
+    ></div>
+    <div
+      class="containerStats square11"
+      style="top: 30.7em; left: 47.9em"
+    ></div>
+    <div
+      class="containerStats square12"
+      style="top: 30.7em; left: 56.4em"
+    ></div>
+
+    <div id="Stats1" class="mesurement" style="top: 695px; left: 800px">
+      0x00
+    </div>
+    <div id="Stats2" class="mesurement" style="top: 795px; left: 800px">
+      0x00
+    </div>
+    <div id="Stats3" class="mesurement" style="top: 895px; left: 800px">
+      0x00
+    </div>
+
+    <div id="Color1" class="Color" style="top: 768px; left: 1273px"></div>
+    <div id="RFID1" class="mesurement" style="top: 336px; left: 1100px">
+      0x00
+    </div>
+    <div id="RFID2" class="mesurement" style="top: 414px; left: 1100px">
+      0x00
+    </div>
+    <div id="RFID3" class="mesurement" style="top: 492px; left: 1100px">
+      0x00
+    </div>
+
+    <span id="online" class="online">Offline</span>
+    <script>
+      var mqtt_server = "192.168.1.30";
+      var mqtt_port = "9001";
+      /*var mqtt_server = "127.0.0.1";
+      var mqtt_port = "8080";*/
+      var mqtt_destname = "uebersicht";
+
+      var Color1r = 0;
+      var Color1g = 0;
+      var Color1b = 0;
+
+      function onMessageArrived(message) {
+        console.log(message.destinationName);
+        if (message.destinationName.includes("Color1r")) {
+          console.log("R");
+          Color1r = message.payloadString;
+          if (message.payloadString > 60) {
+            Color1r = message.payloadString;
+            setColor1();
+          }
+        } else if (message.destinationName.includes("Color1g")) {
+          Color1g = message.payloadString;
+          if (message.payloadString > 60) {
+            Color1g = message.payloadString;
+            setColor1();
+          }
+        } else if (message.destinationName.includes("Color1b")) {
+          Color1b = message.payloadString;
+          if (message.payloadString > 60) {
+            Color1b = message.payloadString;
+            setColor1();
+          }
+        } else if (message.destinationName == "Stats3") {
+          document.getElementById(message.destinationName).innerText =
+            parseFloat(message.payloadString).toFixed(2);
+        } else if (
+          message.destinationName.includes("Stats") ||
+          message.destinationName.includes("contMess")
+        ) {
+          document.getElementById(message.destinationName).innerText =
+            message.payloadString;
+        } else if (message.destinationName.includes("RFID")) {
+          if (parseInt(message.payloadString) == 1) {
+            document.getElementById(message.destinationName).innerText =
+              "Innovating automation.";
+          } else if (parseInt(message.payloadString) == 2) {
+            document.getElementById(message.destinationName).innerText =
+              "Passion for sensors.";
+          } else if (parseInt(message.payloadString) == 3) {
+            document.getElementById(message.destinationName).innerText =
+              "More than safety.";
+          } else if (parseInt(message.payloadString) == 4) {
+            document.getElementById(message.destinationName).innerText =
+              "Beschleunige deine Karriere";
+          } else if (parseInt(message.payloadString) == 5) {
+            document.getElementById(message.destinationName).innerText =
+              "Close to you!";
+          } else if (parseInt(message.payloadString) == 6) {
+            document.getElementById(message.destinationName).innerText =
+              "The sensor people.";
+          } else if (parseInt(message.payloadString) == 7) {
+            document.getElementById(message.destinationName).innerText =
+              "Sensing tomorrow";
+          } else if (parseInt(message.payloadString) == 8) {
+            document.getElementById(message.destinationName).innerText =
+              "Create Today. Enrich Tomorrow.";
+          } else if (parseInt(message.payloadString) == 9) {
+            document.getElementById(message.destinationName).innerText =
+              "The spirit of safety";
+          } else if (parseInt(message.payloadString) == 10) {
+            document.getElementById(message.destinationName).innerText =
+              "Your automation, our passion";
+          } else if (parseInt(message.payloadString) == 11) {
+            document.getElementById(message.destinationName).innerText =
+              "Sensor Intelligence";
+          } else if (parseInt(message.payloadString) == 12) {
+            document.getElementById(message.destinationName).innerText =
+              "Mehr Präzision";
+          }
+        }
+      }
+
+      function setColor1() {
+        document.getElementById("Color1").style.backgroundColor =
+          "rgb(" + Color1r + "," + Color1g + "," + Color1b + ")";
+        console.log("rgb(" + Color1r + "," + Color1g + "," + Color1b + ")");
+      }
+
+      window.onload = function () {
+        conectMQTT();
+
+        for (let i = 1; i < 7; i++) {
+          var top = "426px";
+          var left = 135;
+          var leftmult = 135;
+          var contMess = document.createElement("div");
+          contMess.className = "mesurement";
+          contMess.id = "contMess" + i;
+          contMess.innerText = "0x00";
+          contMess.style.top = top;
+          contMess.style.left = left + leftmult * i + "px";
+          document.getElementById("cont" + i).appendChild(contMess);
+          left += 50;
+        }
+
+        for (let i = 7; i < 13; i++) {
+          var top = "577px";
+          var left = 140;
+          var leftmult = 135;
+          var contMess = document.createElement("div");
+          contMess.className = "mesurement";
+          contMess.innerText = "0x00";
+          contMess.id = "contMess" + i;
+          contMess.style.top = top;
+          contMess.style.left = left + leftmult * (i - 6) + "px";
+          document.getElementById("cont" + i).appendChild(contMess);
+          left += 50;
+        }
+      };
+
+      function conectMQTT() {
+        client = new Paho.MQTT.Client(mqtt_server, Number(mqtt_port), "");
+        var options = {
+          useSSL: false,
+          onSuccess: onConnect,
+        };
+        client.connect(options);
+
+        client.onMessageArrived = onMessageArrived;
+      }
+      function onConnect() {
+        document.getElementById("online").innerHTML = "Online";
+        document.getElementById("online").style.backgroundColor = "Green";
+
+        for (let i = 1; i < 13; i++) {
+          var counterTopic = "contMess" + i;
+          client.subscribe(counterTopic);
+        }
+        client.subscribe("Color1r");
+        client.subscribe("Color1g");
+        client.subscribe("Color1b");
+        client.subscribe("Color2");
+
+        client.subscribe("RFID1");
+        client.subscribe("RFID2");
+        client.subscribe("RFID3");
+
+        client.subscribe("Stats1");
+        client.subscribe("Stats2");
+        client.subscribe("Stats3");
+      }
+
+      function sendMsg(msg) {
+        var mqtt_msg = msg;
+        message = new Paho.MQTT.Message(mqtt_msg);
+        message.destinationName = mqtt_destname;
+        client.send(message);
+      }
+    </script>
+  </body>
+</html>
